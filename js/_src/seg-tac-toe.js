@@ -11,18 +11,24 @@
 // @codekit-prepend "stt-ui.js";
 
 
-function stt_init() {
-	stt_init_vars();
-	stt_init_logic();
-	stt_init_ui();
+function sttInit() {
+	sttInitVars();
+	sttInitLogic();
+	sttInitUI();
 }
 
-function stt_reset() {
-	stt_reset_vars();
-	stt_reset_logic();
-	stt_reset_ui();
+function sttReset() {
+	sttResetVars();
+	sttResetLogic();
+	sttResetUI();
 }
 
 $( document ).ready(function() {
     console.log("document.ready");
+	sttUIMarkcell($("#stt-main-cell-0-0"),"X");
+	sttUIMarkcell($("#stt-main-cell-0-1"),"O");
+	sttUIMarkcell($("#stt-main-cell-1-1"),"X");
+	sttUIMarkcell($("#stt-main-cell-2-0"),"O");
+	sttUIMarkcell($("#stt-main-cell-2-2"),"X");
+
 });

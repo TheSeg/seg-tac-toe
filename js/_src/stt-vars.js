@@ -15,10 +15,12 @@ var playerProps = {
     "X": {
         "shortname": "X",
         "faIconClass": "icon-remove-circle",
+		"cellClass": "input-claimed-x",
     },
     "O": {
         "shortname": "O",
         "faIconClass": "icon-circle-blank",
+		"cellClass": "input-claimed-o",
     }
 };
 
@@ -28,10 +30,10 @@ var initalStatus = {
 
 var currentStatus = initalStatus;
 
-function stt_reset_vars() {
+function sttResetVars() {
 	currentStatus = initalStatus;
 }
 
-function stt_init_vars() {
-	stt_reset_vars();
+function sttInitVars() {
+	sttResetVars();
 }

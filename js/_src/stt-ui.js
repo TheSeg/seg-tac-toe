@@ -6,15 +6,20 @@
 
 */
 
-function stt_ui_init() {
-	console.log("stt_UI_Init()");
-	
+function sttInitUI() {
+	console.log("sttInitUI();");
 }
 
-function stt_reset_ui() {
-	
+function sttResetUI() {
+	console.log("sttResetUI();");
 }
 
-function stt_init_ui() {
+function sttUIMarkcell( targetCell , targetPlayer ) {
+	console.log( "sttUIMarkcell( "+ targetCell + " , "+ targetPlayer +" );" );
+	
+	// Check to make sure square isn't already assigned.
+	
+	// Assign player's CSS class to target element.
+	targetCell.addClass(playerProps[targetPlayer].cellClass);
 	
 }

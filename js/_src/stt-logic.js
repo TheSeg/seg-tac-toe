@@ -10,15 +10,16 @@ function MainLogic() {
     console.log("MainLogic();");
 }
 
-function stt_GetWinStatus() {
-	console.log("stt_GetWinStatus();");
+function sttGetWinStatus() {
+	console.log("sttGetWinStatus();");
 	
 }
 
-function stt_reset_logic() {
+function sttResetLogic() {
 	
 }
 
-function stt_init_logic() {
+function sttInitLogic() {
 	
 }
+
