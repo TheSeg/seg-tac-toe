@@ -35,6 +35,12 @@
 #stt-main-playfield ul li:last-child {
   padding-right: 0;
 }
+#stt-main-playfield .input-claimed-x {
+  background-color: #ffff00;
+}
+#stt-main-playfield .input-claimed-o {
+  background-color: #ff00ff;
+}
 #footer {
   background-color: #f5f5f5;
 }

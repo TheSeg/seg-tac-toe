@@ -11,15 +11,14 @@
 
 // Variables
 @stt-cell-size:150px;
-
+@stt-player-color-x:#ff0;
+@stt-player-color-o:#f0f;
 
 body {
   
 }
 
 #stt-main-playfield {
-  //outline:1px solid red;
-  
   text-align:center;
   ul {
     width:( @stt-cell-size * 3 ) + 0px;
@@ -47,6 +46,12 @@ body {
       }
       vertical-align:middle;
     }
+  }
+  .input-claimed-x {
+	  background-color:@stt-player-color-x;
+  }
+  .input-claimed-o {
+	  background-color:@stt-player-color-o;
   }
 }
 
