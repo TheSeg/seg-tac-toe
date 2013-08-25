@@ -28,12 +28,16 @@ body {
     &:last-child {
       padding-bottom:0;
     }
+	.stt-cell-claimed(@targetColor) {
+	  background-color:@targetColor;
+	  &:hover {
+		  background-color:lighten(@targetColor,30%);
+	  }		
+	}
     li {
       display:table-cell;
+      vertical-align:middle;
       background-color:#ccc;
-      &:hover {
-        background-color:#ddd;
-      }
       font-size:20pt;
       text-align:center;
       border:1px solid black;
@@ -44,14 +48,16 @@ body {
       &:last-child {
         padding-right:0;
       }
-      vertical-align:middle;
+      &:hover {
+        background-color:#ddd;
+      }
+	  &.input-claimed-x {
+		  .stt-cell-claimed(@stt-player-color-x);
+	  }
+	  &.input-claimed-o {
+		  .stt-cell-claimed(@stt-player-color-o);
+	  }
     }
-  }
-  .input-claimed-x {
-	  background-color:@stt-player-color-x;
-  }
-  .input-claimed-o {
-	  background-color:@stt-player-color-o;
   }
 }
 

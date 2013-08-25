@@ -19,6 +19,7 @@
 }
 #stt-main-playfield ul li {
   display: table-cell;
+  vertical-align: middle;
   background-color: #ccc;
   font-size: 20pt;
   text-align: center;
@@ -27,19 +28,24 @@
   height: 150px;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  vertical-align: middle;
-}
-#stt-main-playfield ul li:hover {
-  background-color: #ddd;
 }
 #stt-main-playfield ul li:last-child {
   padding-right: 0;
 }
-#stt-main-playfield .input-claimed-x {
+#stt-main-playfield ul li:hover {
+  background-color: #ddd;
+}
+#stt-main-playfield ul li.input-claimed-x {
   background-color: #ffff00;
 }
-#stt-main-playfield .input-claimed-o {
+#stt-main-playfield ul li.input-claimed-x:hover {
+  background-color: #ffff99;
+}
+#stt-main-playfield ul li.input-claimed-o {
   background-color: #ff00ff;
+}
+#stt-main-playfield ul li.input-claimed-o:hover {
+  background-color: #ff99ff;
 }
 #footer {
   background-color: #f5f5f5;
