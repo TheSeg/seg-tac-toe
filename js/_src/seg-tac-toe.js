@@ -6,8 +6,9 @@
 
 */
 
-// @codekit-append "stt-logic.js";
+// @codekit-prepend "stt-vars.js";
+// @codekit-prepend "stt-logic.js";
 
 $( document ).ready(function() {
-    
+    console.log("document.ready");
 });
