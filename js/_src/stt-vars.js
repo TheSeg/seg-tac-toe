@@ -21,3 +21,17 @@ var playerProps = {
         "faIconClass": "icon-circle-blank",
     }
 };
+
+var initalStatus = {
+	"currentPlayer":"X",
+};
+
+var currentStatus = initalStatus;
+
+function stt_reset_vars() {
+	currentStatus = initalStatus;
+}
+
+function stt_init_vars() {
+	stt_reset_vars();
+}
