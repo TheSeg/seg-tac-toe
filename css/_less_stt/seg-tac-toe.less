@@ -1,0 +1,55 @@
+@import "../_less_bootstrap/variables.less";
+@import "../_less_bootstrap/mixins.less";
+
+/*
+
+  Seg-Tac-Toe
+    by John "Seg" Seggerson
+    http://theseg.github.io/
+
+*/
+
+// Variables
+@stt-cell-size:150px;
+
+
+body {
+  
+}
+
+#stt-main-playfield {
+  //outline:1px solid red;
+  
+  text-align:center;
+  ul {
+    width:( @stt-cell-size * 3 ) + 0px;
+    margin:0 0 0 0;
+    padding:0 0 4px 0;
+    background-color:#000;
+    &:last-child {
+      padding-bottom:0;
+    }
+    li {
+      display:table-cell;
+      background-color:#ccc;
+      &:hover {
+        background-color:#ddd;
+      }
+      font-size:20pt;
+      text-align:center;
+      border:1px solid black;
+      width:@stt-cell-size;
+      height:@stt-cell-size;
+      margin:0 0 0 0;
+      padding:0 0 0 0;
+      &:last-child {
+        padding-right:0;
+      }
+      vertical-align:middle;
+    }
+  }
+}
+
+#footer {
+  background-color: #f5f5f5;
+}

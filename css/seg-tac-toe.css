@@ -1,0 +1,40 @@
+/*
+
+  Seg-Tac-Toe
+    by John "Seg" Seggerson
+    http://theseg.github.io/
+
+*/
+#stt-main-playfield {
+  text-align: center;
+}
+#stt-main-playfield ul {
+  width: 450px;
+  margin: 0 0 0 0;
+  padding: 0 0 4px 0;
+  background-color: #000;
+}
+#stt-main-playfield ul:last-child {
+  padding-bottom: 0;
+}
+#stt-main-playfield ul li {
+  display: table-cell;
+  background-color: #ccc;
+  font-size: 20pt;
+  text-align: center;
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  vertical-align: middle;
+}
+#stt-main-playfield ul li:hover {
+  background-color: #ddd;
+}
+#stt-main-playfield ul li:last-child {
+  padding-right: 0;
+}
+#footer {
+  background-color: #f5f5f5;
+}
