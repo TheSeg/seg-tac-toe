@@ -11,6 +11,12 @@ var playField = {
     "height":3,
 };
 
+var gamePlayStatusTypes = {
+	"inprogress":0,
+	"winner":1,
+	"draw":2,
+};
+
 var playerProps = {
     "X": {
         "shortname": "X",
@@ -26,6 +32,7 @@ var playerProps = {
 
 var initalStatus = {
 	"currentPlayer":"X",
+	"gamePlayStatus":gamePlayStatusTypes.inprogress,
 };
 
 var currentStatus = initalStatus;

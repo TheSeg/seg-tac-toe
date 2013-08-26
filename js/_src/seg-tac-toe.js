@@ -30,5 +30,6 @@ $( document ).ready(function() {
 	sttUIMarkcell($("#stt-main-cell-1-1"),"X");
 	sttUIMarkcell($("#stt-main-cell-2-0"),"O");
 	sttUIMarkcell($("#stt-main-cell-2-2"),"X");
-
+	//sttUIMarkcell($("#stt-main-cell-0-2"),"O");
+	console.log( sttGameStateToString() );
 });
