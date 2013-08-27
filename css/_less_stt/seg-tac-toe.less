@@ -116,6 +116,19 @@ body {
 
 #stt-main-playfield {
 
+	.stt-current-player(@targetColor) {
+		.icon-stack-base:hover {
+			color:lighten( @targetColor, 30%);
+		}
+	}
+	
+	&.stt-current-player-X {
+		.stt-current-player(@stt-player-color-x);
+	}
+	&.stt-current-player-O {
+		.stt-current-player(@stt-player-color-o);
+	}
+  
   ul {
 	.center-block();
     width:( @stt-cell-size * 3 ) + 0px;
@@ -131,9 +144,10 @@ body {
 	  #stt.radial( @targetColor );
 	  .icon-stack-base {
 		  color:darken(@targetColor, 30%);
+		  text-shadow:0 0 1px #000;
 	  }
 	  .stt-icon-current-state {
-		  color:#fff;//@targetColor;
+		  color:#fff;
 		  text-shadow:0 0 20px #333;
 	  }
 	  &:hover {
