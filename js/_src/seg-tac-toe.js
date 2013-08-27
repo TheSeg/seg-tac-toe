@@ -11,7 +11,9 @@
 // @codekit-prepend "stt-input.js";
 // @codekit-prepend "stt-logic.js";
 
-
+/**
+ * Runs all Initalizing functions.
+ */
 function sttInit() {
 	sttInitVars();
 	sttInitLogic();
@@ -19,6 +21,9 @@ function sttInit() {
 	sttInitInput();
 }
 
+/**
+ * Runs all Reset functions.
+ */
 function sttReset() {
 	sttResetVars();
 	sttResetLogic();
@@ -26,9 +31,9 @@ function sttReset() {
 	sttResetInput();
 }
 
+/**
+ * Starts application when document is loaded.
+ */
 $( document ).ready(function() {
-    console.log("document.ready");
-	
 	sttInit();
-	
 });

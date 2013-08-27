@@ -150,6 +150,17 @@
 #stt-main-playfield ul li.border-left {
   border-left: 2px solid #000000;
 }
+#model-eog .modal-title {
+  text-align: center;
+  font-size: 20pt;
+}
+#model-eog .modal-body {
+  text-align: center;
+  font-size: 18pt;
+}
+#model-eog .modal-body .featured-icon {
+  font-size: 80pt;
+}
 #footer {
   background-color: #f5f5f5;
 }

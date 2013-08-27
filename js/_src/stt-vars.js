@@ -6,6 +6,9 @@
 
 */
 
+/**
+ * Playfield settings.
+ */
 var playField = {
     "width":3,
     "height":3,
@@ -79,14 +82,23 @@ var playField = {
 	],
 };
 
+/**
+ * Define types of gameplay status.
+ */
 var gamePlayStatusTypes = {
 	"inprogress":0,
 	"winner":1,
 	"draw":2,
 };
 
+/**
+ * Lists order and existance of players.
+ */
 var players = ["X","O"];
 
+/**
+ * Properties related to player types.
+ */
 var playerProps = {
     "X": {
         "shortname": "X",
@@ -100,6 +112,9 @@ var playerProps = {
     }
 };
 
+/**
+ * Inital status; Reset functions always revert to this set.
+ */
 var initalStatus = {
 	"currentPlayer":"X",
 	"state":gamePlayStatusTypes.inprogress,
@@ -107,12 +122,21 @@ var initalStatus = {
 	"winCondition":null,
 };
 
+/**
+ * All functions use currentStatus for state information.
+ */
 var currentStatus = $.extend( {}, initalStatus );
 
+/**
+ * Reset all variables.
+ */
 function sttResetVars() {
 	currentStatus = $.extend( {}, initalStatus );
 }
 
+/**
+ * Initalize all variables.
+ */
 function sttInitVars() {
 	sttResetVars();
 }
