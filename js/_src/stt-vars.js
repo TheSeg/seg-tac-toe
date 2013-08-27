@@ -90,12 +90,12 @@ var players = ["X","O"];
 var playerProps = {
     "X": {
         "shortname": "X",
-        "faIconClass": "icon-remove-circle",
+        "faIconClass": "glyphicon-remove-circle",
 		"cellClass": "input-claimed-x",
     },
     "O": {
         "shortname": "O",
-        "faIconClass": "icon-circle-blank",
+        "faIconClass": "glyphicon-record",
 		"cellClass": "input-claimed-o",
     }
 };

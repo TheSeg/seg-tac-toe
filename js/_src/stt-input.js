@@ -46,9 +46,10 @@ function sttInputEndTurn() {
 function sttInputBind( targetElement ) {
 	
 	if ( currentStatus.state === gamePlayStatusTypes.inprogress ) {
-		sttUIMarkcell( $(targetElement) , currentStatus.currentPlayer );
-		sttInputAdvancePlayer();
-		sttInputEndTurn();
+		if ( sttUIMarkcell( $(targetElement) , currentStatus.currentPlayer ) ) {
+			sttInputAdvancePlayer();
+			sttInputEndTurn();
+		}
 	}
 	
 }
