@@ -112,7 +112,11 @@ function sttGetWinStatus()
 		// The defacto returnVar of 0:null state is already defined.
 	}
 	
-	return returnVar;
+	currentStatus.state = returnVar.state;
+	currentStatus.winner = returnVar.winner;
+	currentStatus.winCondition = returnVar.winCondition;
+	
+	return true;
 }
 
 function sttGameStateToString()
@@ -121,10 +125,7 @@ function sttGameStateToString()
 	var returnString;
 	
 	// Set Global current status
-	var getCurrentStatus = sttGetWinStatus();
-	currentStatus.state = getCurrentStatus.state;
-	currentStatus.winner = getCurrentStatus.winner;
-	currentStatus.winCondition = getCurrentStatus.winCondition;
+	sttGetWinStatus();
 	
 	// Respond back with string of status.
 	switch( currentStatus.state )

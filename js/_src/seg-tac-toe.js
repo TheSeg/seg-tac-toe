@@ -31,6 +31,7 @@ $( document ).ready(function() {
 	
 	sttInit();
 	
+	// Use to quickly set given situation.
 	if ( false ) {
 		sttUIMarkcell($("#stt-main-cell-0-0"),"X");
 		sttUIMarkcell($("#stt-main-cell-1-1"),"O");
@@ -47,7 +48,4 @@ $( document ).ready(function() {
 		sttUIMarkcell($("#stt-main-cell-0-2"),"O");
 	}
 
-	var returnString = sttGameStateToString();
-	console.log( "-- Final Result --");
-	console.log( returnString );
 });
