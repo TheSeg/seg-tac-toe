@@ -32,14 +32,18 @@ function sttUIMarkcell( targetCell , targetPlayer )
 	if ( targetCell.hasClass("input-claimed") === false ) {
 		// Assign player's CSS class to target element.
 		targetCell.addClass( "input-claimed " + playerProps[targetPlayer].cellClass);
+		$( "#"+targetCell.attr("id")+" .stt-icon-current-state").html(
+			'<i class="glyphicon '+playerProps[targetPlayer].faIconClass+'"></i>'
+		);
 	} else {
-		console.warn( "The cell '"+targetCell.id+"' is already claimed!" );
+		console.warn( "The cell '"+targetCell.attr("id")+"' is already claimed!" );
 	}
 }
 
 function sttUIUnMarkCell( targetCell )
 {
 	targetCell.removeClass( targetMarkCellClasses.join(" ") );
+	$( "#"+targetCell.attr("id")+" .stt-icon-current-state").html( '' );
 }
 
 function sttUIUnMarkCellAll()
