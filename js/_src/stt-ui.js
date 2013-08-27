@@ -137,7 +137,7 @@ function sttUIEOF() {
 		case gamePlayStatusTypes.winner:
 			sttUIEOFModalDress(
 				"Congratulations!!!" ,
-				"Game was won by player "+ sttUIGetPlayerIcon( currentStatus.winner ) +"!",
+				"Player "+ sttUIGetPlayerIcon( currentStatus.winner ) +" won the game!",
 				sttUIGetPlayerIcon( currentStatus.winner )
 			);
 			break;
