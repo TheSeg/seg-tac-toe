@@ -14,7 +14,7 @@ function sttInitUI()
 	targetMarkCellClasses = [
 		"input-claimed"
 	];
-	for ( playerName in playerProps ) {
+	for ( var playerName in playerProps ) {
 		targetMarkCellClasses.push( playerProps[playerName].cellClass );
 	}
 }

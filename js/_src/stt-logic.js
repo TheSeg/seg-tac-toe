@@ -121,7 +121,10 @@ function sttGameStateToString()
 	var returnString;
 	
 	// Set Global current status
-	currentStatus = sttGetWinStatus();
+	var getCurrentStatus = sttGetWinStatus();
+	currentStatus.state = getCurrentStatus.state;
+	currentStatus.winner = getCurrentStatus.winner;
+	currentStatus.winCondition = getCurrentStatus.winCondition;
 	
 	// Respond back with string of status.
 	switch( currentStatus.state )

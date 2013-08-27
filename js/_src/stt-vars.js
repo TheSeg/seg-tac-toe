@@ -85,6 +85,8 @@ var gamePlayStatusTypes = {
 	"draw":2,
 };
 
+var players = ["X","O"];
+
 var playerProps = {
     "X": {
         "shortname": "X",
