@@ -28,6 +28,7 @@ function sttResetUI()
 
 function sttUIMarkcell( targetCell , targetPlayer )
 {
+	var returnVar = false;
 	// Check to make sure square isn't already assigned.
 	if ( targetCell.hasClass("input-claimed") === false ) {
 		// Assign player's CSS class to target element.
@@ -35,9 +36,12 @@ function sttUIMarkcell( targetCell , targetPlayer )
 		$( "#"+targetCell.attr("id")+" .stt-icon-current-state").html(
 			'<i class="glyphicon '+playerProps[targetPlayer].faIconClass+'"></i>'
 		);
+		returnVar = true;
 	} else {
 		console.warn( "The cell '"+targetCell.attr("id")+"' is already claimed!" );
 	}
+	
+	return returnVar;
 }
 
 function sttUIUnMarkCell( targetCell )
