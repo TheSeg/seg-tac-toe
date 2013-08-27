@@ -6,11 +6,16 @@
 
 */
 
+/**
+ * Variables
+ */
 var targetMarkCellClasses;
 
+/**
+ * Initializes the UI.
+ */
 function sttInitUI()
 {
-	console.log("sttInitUI();");
 	targetMarkCellClasses = [
 		"input-claimed"
 	];
@@ -20,13 +25,18 @@ function sttInitUI()
 	sttResetUI();
 }
 
+/**
+ * Resets UI to inital states.
+ */
 function sttResetUI()
 {
-	console.log("sttResetUI();");
 	sttUIUnMarkCellAll();
 	sttUICurrentPlayer();
 }
 
+/**
+ * Generates HTML code of player icon.
+ */
 function sttUIGetPlayerIcon( targetPlayer )
 {
 	// Returns HTML of the target player's icon.
@@ -35,6 +45,16 @@ function sttUIGetPlayerIcon( targetPlayer )
 	return returnString;
 }
 
+/**
+ * Marks target cell to the target player.
+ * 
+ * @param targetCell object
+ * 		jQuery element of cell to mark.
+ * @param targetPlayer string
+ * 		String of player to tag cell.
+ * @return bool
+ * 		TRUE if targetCell was marked with targetPlayer.
+ */
 function sttUIMarkcell( targetCell , targetPlayer )
 {
 	var returnVar = false;
@@ -47,18 +67,28 @@ function sttUIMarkcell( targetCell , targetPlayer )
 		);
 		returnVar = true;
 	} else {
-		console.warn( "The cell '"+targetCell.attr("id")+"' is already claimed!" );
+		// The cell is already claimed.
 	}
 	
 	return returnVar;
 }
 
+
+/**
+ * Umarks target cell of all players.
+ * 
+ * @param targetCell object
+ * 		jQuery element of cell to unmark.
+ */
 function sttUIUnMarkCell( targetCell )
 {
 	targetCell.removeClass( targetMarkCellClasses.join(" ") );
 	$( "#"+targetCell.attr("id")+" .stt-icon-current-state").html( '' );
 }
 
+/**
+ * Umarks all cells of all players.
+ */
 function sttUIUnMarkCellAll()
 {
 	$(".stt-cell").each(function(i,a) {
@@ -66,7 +96,17 @@ function sttUIUnMarkCellAll()
 	});
 }
 
-function sttUIEOFModelDress( inputTitle , inputBody, inputIcon )
+/**
+ * Dresses End Of Game modal with target text.
+ * 
+ * @param inputTitle string
+ * 		HTML string of message title.
+ * @param inputBody string
+ * 		HTML string of message body.
+ * @param inputIcon string
+ * 		HTML string of icon to feature.
+ */
+function sttUIEOFModalDress( inputTitle , inputBody, inputIcon )
 {
 	$('#model-eog .modal-title').html( inputTitle );
 	
@@ -75,6 +115,12 @@ function sttUIEOFModelDress( inputTitle , inputBody, inputIcon )
 	$('#model-eog .modal-body').html( compiledBody );
 }
 
+/**
+ * Displays End Of Game modal screen. Includes updating based on current state.
+ * 
+ * @return bool
+ * 		FALSE if currentStatus.state is inprogress.
+ */
 function sttUIEOF() {
 	// End of Game Display
 	
@@ -85,18 +131,18 @@ function sttUIEOF() {
 	
 	// Closing Pre-animations
 	
-	// Dress the Model.
+	// Dress the Modal.
 	switch( currentStatus.state )
 	{
 		case gamePlayStatusTypes.winner:
-			sttUIEOFModelDress(
+			sttUIEOFModalDress(
 				"Congratulations!!!" ,
 				"Game was won by player "+ sttUIGetPlayerIcon( currentStatus.winner ) +"!",
 				sttUIGetPlayerIcon( currentStatus.winner )
 			);
 			break;
 		case gamePlayStatusTypes.draw:
-			sttUIEOFModelDress(
+			sttUIEOFModalDress(
 				"DRAW!" , 
 				"The game ended in a draw.<br>Why not try a <strong>New Game</strong>?",
 				'<i class="icon-question-sign"></i>'
@@ -104,13 +150,19 @@ function sttUIEOF() {
 			break;
 	}
 	
-	// Show Model
+	// Show Modal
 	$('#model-eog').modal('show');
+	
+	return true;
 }
 
+/**
+ * Sets up playfield style for the active player.
+ * 
+ * @return bool
+ * 		FALSE if game is currently NOT inprogress.
+ */
 function sttUICurrentPlayer() {
-	// Sets up playfield style for active player.
-	
 	// Clean up current settings.
 	$("#stt-main-playfield").removeClass("stt-current-player-X stt-current-player-O");
 	

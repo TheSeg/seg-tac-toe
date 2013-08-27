@@ -7,21 +7,43 @@
 */
 
 
-function sttResetLogic()
-{
-	
-}
-
+/**
+ * Initializes the Logic system.
+ */
 function sttInitLogic()
 {
 	
 }
 
+/**
+ * Resets the Logic system.
+ */
+function sttResetLogic()
+{
+	
+}
+
+/**
+ * Returns the ID string of a cell, given the X Y coordinates.
+ * 
+ * @param inputXY array
+ * 		Array in x,y format.
+ * @return string
+ * 		String of ID name of requested cell.
+ */
 function sttCellXYtoID( inputXY )
 {
 	return playField.coreCellIDName + inputXY.x + "-" + inputXY.y;
 }
 
+/**
+ * Main logic engine to determine win/loose/draw state.
+ * 
+ * @param targetID
+ * 		Array in x,y format.
+ * @return object
+ * 		Returns object of results.
+ */
 function sttGetRowStatus( targetID )
 {
 	// Variable declars
@@ -69,6 +91,12 @@ function sttGetRowStatus( targetID )
 	
 }
 
+/**
+ * Runs logic engine to check win conditions, then reports to state variables on results.
+ * 
+ * @return bool
+ * 		TRUE on successful compliation.
+ */
 function sttSetWinStatus()
 {
 	
@@ -129,30 +157,9 @@ function sttSetWinStatus()
 	return true;
 }
 
-function sttGameStateToString()
-{
-	// Variable declars
-	var returnString;
-	
-	// Respond back with string of status.
-	switch( currentStatus.state )
-	{
-		case gamePlayStatusTypes.inprogress:
-			returnString = "Game is still in progress.";
-			break;
-		case gamePlayStatusTypes.winner:
-			returnString = "Game was won by player "+currentStatus.winner+" with the #"+currentStatus.winCondition+" win condition!";
-			break;
-		case gamePlayStatusTypes.draw:
-			returnString = "Game has ended in a draw.";
-			break;
-		default:
-			returnString = "Game is still in progress.";
-	}
-	
-	return returnString;
-}
-
+/**
+ * Checks if game is no longer in progress. Runs EOG procedure if there is an outcome.
+ */
 function sttLogicEOG() {
 	// Check the status and launches end of game acordingly.
 	if ( currentStatus.state > gamePlayStatusTypes.inprogress ) {
