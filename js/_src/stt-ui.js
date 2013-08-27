@@ -30,7 +30,7 @@ function sttResetUI()
 function sttUIGetPlayerIcon( targetPlayer )
 {
 	// Returns HTML of the target player's icon.
-	var returnString = '<span class="glyphicon ' + playerProps[ targetPlayer.toUpperCase() ].faIconClass + '"></span>'
+	var returnString = '<span class="glyphicon ' + playerProps[ targetPlayer.toUpperCase() ].faIconClass + '"></span>';
 	
 	return returnString;
 }
