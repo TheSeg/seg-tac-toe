@@ -61,6 +61,8 @@
 #stt-main-playfield ul li .icon-stack-base {
   color: #ccc;
   text-shadow: 0 0 4px #000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 #stt-main-playfield ul li .glyphicon {
   top: -8px;
