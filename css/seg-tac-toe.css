@@ -20,7 +20,7 @@
 #stt-main-playfield ul li {
   display: table-cell;
   vertical-align: middle;
-  background-color: #eee;
+  background-color: #fff;
   font-size: 50pt;
   text-align: center;
   border: 1px solid black;
@@ -35,8 +35,11 @@
   user-select: none;
   cursor: pointer;
 }
+#stt-main-playfield ul li .icon-stack-base {
+  color: #ccc;
+  text-shadow: 0 0 4px #000;
+}
 #stt-main-playfield ul li .glyphicon {
-  color: #fff;
   top: -8px;
 }
 #stt-main-playfield ul li:last-child {
@@ -46,18 +49,24 @@
   background-color: #ddd;
 }
 #stt-main-playfield ul li.input-claimed-x {
-  background-color: #ffff00;
   cursor: not-allowed;
 }
-#stt-main-playfield ul li.input-claimed-x:hover {
-  background-color: #ffff99;
+#stt-main-playfield ul li.input-claimed-x .icon-stack-base {
+  color: #999;
+}
+#stt-main-playfield ul li.input-claimed-x .stt-icon-current-state {
+  color: #ff3333;
+  text-shadow: 0 0 2px #000;
 }
 #stt-main-playfield ul li.input-claimed-o {
-  background-color: #ff00ff;
   cursor: not-allowed;
 }
-#stt-main-playfield ul li.input-claimed-o:hover {
-  background-color: #ff99ff;
+#stt-main-playfield ul li.input-claimed-o .icon-stack-base {
+  color: #999;
+}
+#stt-main-playfield ul li.input-claimed-o .stt-icon-current-state {
+  color: #3333ff;
+  text-shadow: 0 0 2px #000;
 }
 #footer {
   background-color: #f5f5f5;

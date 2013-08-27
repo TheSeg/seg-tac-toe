@@ -11,8 +11,8 @@
 
 // Variables
 @stt-cell-size:150px;
-@stt-player-color-x:#ff0;
-@stt-player-color-o:#f0f;
+@stt-player-color-x:lighten(#f00,10%);
+@stt-player-color-o:lighten(#00f,10%);
 
 body {
   
@@ -28,17 +28,26 @@ body {
     &:last-child {
       padding-bottom:0;
     }
+	
+	// Common Function for claimed cells.
 	.stt-cell-claimed(@targetColor) {
-	  background-color:@targetColor;
 	  cursor:not-allowed;
+	  .icon-stack-base {
+		  color:#999;
+	  }
+	  .stt-icon-current-state {
+		  color:@targetColor;
+		  text-shadow:0 0 2px #000;
+	  }
 	  &:hover {
-		  background-color:lighten(@targetColor,30%);
+		  //background-color:lighten(@targetColor,30%);
 	  }
 	}
+	
     li {
       display:table-cell;
       vertical-align:middle;
-      background-color:#eee;
+      background-color:#fff;
       font-size:50pt;
       text-align:center;
       border:1px solid black;
@@ -48,8 +57,11 @@ body {
       padding:0 0 0 0;
 	  .user-select(none);
 	  cursor:pointer;
+	  .icon-stack-base {
+		  color:#ccc;
+		  text-shadow:0 0 4px #000;
+	  }
 	  .glyphicon {
-		  color:#fff;
 		  top:-8px;
 	  }
       &:last-child {
