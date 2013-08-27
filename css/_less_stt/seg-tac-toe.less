@@ -11,8 +11,12 @@
 
 // Variables
 @stt-cell-size:150px;
+@stt-cell-border-size:(4px / 2);
+@stt-cell-border-color:#000;
 @stt-player-color-x:lighten(#f00,10%);
 @stt-player-color-o:lighten(#00f,10%);
+
+// Mixins
 
 body {
   
@@ -23,8 +27,8 @@ body {
   ul {
     width:( @stt-cell-size * 3 ) + 0px;
     margin:0 0 0 0;
-    padding:0 0 4px 0;
-    background-color:#000;
+    padding:0 0 0 0;
+    background-color:#ff0;
     &:last-child {
       padding-bottom:0;
     }
@@ -50,10 +54,10 @@ body {
       background-color:#fff;
       font-size:50pt;
       text-align:center;
-      border:1px solid black;
+      //border:4px solid black;
       width:@stt-cell-size;
       height:@stt-cell-size;
-      margin:0 0 0 0;
+      margin:0 10px 0 10px;
       padding:0 0 0 0;
 	  .user-select(none);
 	  cursor:pointer;
@@ -75,6 +79,18 @@ body {
 	  }
 	  &.input-claimed-o {
 		  .stt-cell-claimed(@stt-player-color-o);
+	  }
+	  &.border-top {
+	  	border-top:@stt-cell-border-size solid @stt-cell-border-color;
+	  }
+	  &.border-right {
+	  	border-right:@stt-cell-border-size solid @stt-cell-border-color;
+	  }
+	  &.border-bottom {
+	  	border-bottom:@stt-cell-border-size solid @stt-cell-border-color;
+	  }
+	  &.border-left {
+	  	border-left:@stt-cell-border-size solid @stt-cell-border-color;
 	  }
     }
   }

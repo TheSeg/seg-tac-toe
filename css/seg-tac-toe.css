@@ -11,8 +11,8 @@
 #stt-main-playfield ul {
   width: 450px;
   margin: 0 0 0 0;
-  padding: 0 0 4px 0;
-  background-color: #000;
+  padding: 0 0 0 0;
+  background-color: #ff0;
 }
 #stt-main-playfield ul:last-child {
   padding-bottom: 0;
@@ -23,10 +23,9 @@
   background-color: #fff;
   font-size: 50pt;
   text-align: center;
-  border: 1px solid black;
   width: 150px;
   height: 150px;
-  margin: 0 0 0 0;
+  margin: 0 10px 0 10px;
   padding: 0 0 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -67,6 +66,18 @@
 #stt-main-playfield ul li.input-claimed-o .stt-icon-current-state {
   color: #3333ff;
   text-shadow: 0 0 2px #000;
+}
+#stt-main-playfield ul li.border-top {
+  border-top: 2px solid #000000;
+}
+#stt-main-playfield ul li.border-right {
+  border-right: 2px solid #000000;
+}
+#stt-main-playfield ul li.border-bottom {
+  border-bottom: 2px solid #000000;
+}
+#stt-main-playfield ul li.border-left {
+  border-left: 2px solid #000000;
 }
 #footer {
   background-color: #f5f5f5;
