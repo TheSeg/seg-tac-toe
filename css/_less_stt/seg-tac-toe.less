@@ -11,15 +11,14 @@
 
 // Variables
 @stt-cell-size:150px;
-
+@stt-player-color-x:#ff0;
+@stt-player-color-o:#f0f;
 
 body {
   
 }
 
 #stt-main-playfield {
-  //outline:1px solid red;
-  
   text-align:center;
   ul {
     width:( @stt-cell-size * 3 ) + 0px;
@@ -29,23 +28,38 @@ body {
     &:last-child {
       padding-bottom:0;
     }
+	.stt-cell-claimed(@targetColor) {
+	  background-color:@targetColor;
+	  cursor:not-allowed;
+	  &:hover {
+		  background-color:lighten(@targetColor,30%);
+	  }
+	}
     li {
       display:table-cell;
-      background-color:#ccc;
-      &:hover {
-        background-color:#ddd;
-      }
-      font-size:20pt;
+      vertical-align:middle;
+      background-color:#eee;
+      font-size:50pt;
       text-align:center;
       border:1px solid black;
       width:@stt-cell-size;
       height:@stt-cell-size;
       margin:0 0 0 0;
       padding:0 0 0 0;
+	  .user-select(none);
+	  cursor:pointer;
       &:last-child {
         padding-right:0;
       }
-      vertical-align:middle;
+      &:hover {
+        background-color:#ddd;
+      }
+	  &.input-claimed-x {
+		  .stt-cell-claimed(@stt-player-color-x);
+	  }
+	  &.input-claimed-o {
+		  .stt-cell-claimed(@stt-player-color-o);
+	  }
     }
   }
 }

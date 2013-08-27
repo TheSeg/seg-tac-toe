@@ -30,62 +30,102 @@
 </head>
 <body>
   
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Seg-Tac-Toe</a>
-    </div>
-  </nav>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">Seg-Tac-Toe</a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li>
+			<button id="stt-reset-button" type="button" class="btn btn-default navbar-btn stt-reset-function">Reset</button>
+		</li>
+	</ul>
+</nav>
+<div class="container">
+	
+	<!-- Main Playfield -->
+	<div id="stt-main-playfield">
+		<ul class="list-inline">
+			<li id="stt-main-cell-0-0" class="stt-cell">
+				
+			</li>
+			<li id="stt-main-cell-0-1" class="stt-cell">
+				
+			</li>
+	        <li id="stt-main-cell-0-2" class="stt-cell">
+				
+			</li>
+		</ul>
+		<ul class="list-inline">
+			<li id="stt-main-cell-1-0" class="stt-cell">
+				<span class="icon-stack">
+					<i class="icon-circle icon-stack-base"></i>
+					<i class="icon-light">X</i>
+				</span>
+			</li>
+			<li id="stt-main-cell-1-1" class="stt-cell">
+				<span class="icon-stack">
+					<i class="icon-circle icon-stack-base"></i>
+					<i class="icon-light">O</i>
+				</span>
+			</li>
+			<li id="stt-main-cell-1-2" class="stt-cell">
+				<span class="icon-stack">
+					<i class="icon-circle icon-stack-base"></i>
+				</span>
+			</li>
+		</ul>
+		<ul class="list-inline">
+			<li id="stt-main-cell-2-0" class="stt-cell">
+				<span class="icon-stack">
+					<i class="icon-circle icon-stack-base"></i>
+					<i class="icon-remove-sign icon-light"></i>
+				</span>
+			</li>
+			<li id="stt-main-cell-2-1" class="stt-cell">
+				<span class="icon-stack">
+					<i class="icon-circle icon-stack-base"></i>
+					<i class="icon-circle-blank icon-light"></i>
+				</span>
+			</li>
+			<li id="stt-main-cell-2-2" class="stt-cell">
+				
+			</li>
+		</ul>
+	</div>
+
+</div>
   
-  <div class="container">
-    
-    <div id="stt-main-playfield">
-      <ul class="list-inline">
-        <li id="stt-main-cell-0-0" class="stt-cell">
-          Cell 0-0
-        </li>
-        <li id="stt-main-cell-0-1" class="stt-cell">
-          Cell 0-1
-        </li>
-        <li id="stt-main-cell-0-2" class="stt-cell">
-          Cell 0-2
-        </li>
-      </ul>
-      <ul class="list-inline">
-        <li id="stt-main-cell-1-0" class="stt-cell">
-          Cell 1-0
-        </li>
-        <li id="stt-main-cell-1-1" class="stt-cell">
-          Cell 1-1
-        </li>
-        <li id="stt-main-cell-1-2" class="stt-cell">
-          Cell 1-2
-        </li>
-      </ul>
-      <ul class="list-inline">
-        <li id="stt-main-cell-2-0" class="stt-cell">
-          Cell 2-0
-        </li>
-        <li id="stt-main-cell-2-1" class="stt-cell">
-          Cell 2-1
-        </li>
-        <li id="stt-main-cell-2-2" class="stt-cell">
-          Cell 2-2
-        </li>
-      </ul>
-    </div>
-    
-  </div>
-  
-  <nav id="footer" class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <ul class="nav navbar-nav">
-      <p class="navbar-text text-muted credit">Created by <a href="http://theseg.github.io/">John "Seg" Seggerson</a>.</p>
-    </ul>
-  </nav>
-  
-  <!-- JavaScripts -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/holder.min.js"></script>
-  <script src="js/seg-tac-toe.min.js"></script>
+<!-- End Of Game Modal -->
+<div class="modal fade" id="model-eog" tabindex="-1" role="dialog" aria-labelledby="model-eog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">End of Game!</h4>
+			</div>
+			<div class="modal-body">
+				STUFF HAPPENED!
+			</div>
+			<div class="modal-footer">
+				<button id="" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button id="" type="button" class="btn btn-primary stt-reset-function" data-dismiss="modal">New Game</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Footer -->
+<nav id="footer" class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+	<ul class="nav navbar-nav">
+		<p class="navbar-text text-muted credit">Created by <a href="http://theseg.github.io/">John "Seg" Seggerson</a>.</p>
+	</ul>
+</nav>
+
+<!-- JavaScripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/holder.min.js"></script>
+<script src="js/seg-tac-toe.min.js"></script>
+
 </body>
 </html>
