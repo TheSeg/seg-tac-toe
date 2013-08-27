@@ -134,9 +134,6 @@ function sttGameStateToString()
 	// Variable declars
 	var returnString;
 	
-	// Set Global current status
-	sttSetWinStatus();
-	
 	// Respond back with string of status.
 	switch( currentStatus.state )
 	{
