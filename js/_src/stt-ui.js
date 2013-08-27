@@ -17,12 +17,13 @@ function sttInitUI()
 	for ( var playerName in playerProps ) {
 		targetMarkCellClasses.push( playerProps[playerName].cellClass );
 	}
+	sttResetUI();
 }
 
 function sttResetUI()
 {
 	console.log("sttResetUI();");
-	
+	sttUIUnMarkCellAll();
 }
 
 function sttUIMarkcell( targetCell , targetPlayer )

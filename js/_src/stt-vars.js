@@ -107,10 +107,10 @@ var initalStatus = {
 	"winCondition":null,
 };
 
-var currentStatus = initalStatus;
+var currentStatus = $.extend( {}, initalStatus );
 
 function sttResetVars() {
-	currentStatus = initalStatus;
+	currentStatus = $.extend( {}, initalStatus );
 }
 
 function sttInitVars() {
