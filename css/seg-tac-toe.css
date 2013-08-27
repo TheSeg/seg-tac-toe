@@ -28,6 +28,12 @@
   height: 150px;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 #stt-main-playfield ul li:last-child {
   padding-right: 0;
@@ -37,12 +43,14 @@
 }
 #stt-main-playfield ul li.input-claimed-x {
   background-color: #ffff00;
+  cursor: not-allowed;
 }
 #stt-main-playfield ul li.input-claimed-x:hover {
   background-color: #ffff99;
 }
 #stt-main-playfield ul li.input-claimed-o {
   background-color: #ff00ff;
+  cursor: not-allowed;
 }
 #stt-main-playfield ul li.input-claimed-o:hover {
   background-color: #ff99ff;

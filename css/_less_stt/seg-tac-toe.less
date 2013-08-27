@@ -30,9 +30,10 @@ body {
     }
 	.stt-cell-claimed(@targetColor) {
 	  background-color:@targetColor;
+	  cursor:not-allowed;
 	  &:hover {
 		  background-color:lighten(@targetColor,30%);
-	  }		
+	  }
 	}
     li {
       display:table-cell;
@@ -45,6 +46,8 @@ body {
       height:@stt-cell-size;
       margin:0 0 0 0;
       padding:0 0 0 0;
+	  .user-select(none);
+	  cursor:pointer;
       &:last-child {
         padding-right:0;
       }
