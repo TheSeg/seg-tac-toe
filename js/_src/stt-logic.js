@@ -69,7 +69,7 @@ function sttGetRowStatus( targetID )
 	
 }
 
-function sttGetWinStatus()
+function sttSetWinStatus()
 {
 	
 	// Variable declars
@@ -125,7 +125,7 @@ function sttGameStateToString()
 	var returnString;
 	
 	// Set Global current status
-	sttGetWinStatus();
+	sttSetWinStatus();
 	
 	// Respond back with string of status.
 	switch( currentStatus.state )

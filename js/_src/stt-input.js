@@ -37,7 +37,7 @@ function sttInputAdvancePlayer()
 }
 
 function sttInputEndTurn() {
-	sttGetWinStatus();
+	sttSetWinStatus();
 }
 
 function sttInputBind( targetElement ) {
