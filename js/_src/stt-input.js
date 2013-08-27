@@ -14,7 +14,14 @@ function sttInitInput()
 {
 	$(".stt-cell").click( function() {
 		sttInputBind( this );
-	});
+	}).hover(
+		function() {
+			sttInputOnHover( this );
+		},
+		function() {
+			sttInputOnHoverOut( this );
+		}
+	);
 	$(".stt-reset-function").click( function() {
 		sttReset();
 	});
@@ -39,12 +46,14 @@ function sttInputAdvancePlayer()
 	
 }
 
-function sttInputEndTurn() {
+function sttInputEndTurn()
+{
 	sttSetWinStatus();
 	sttUICurrentPlayer();
 }
 
-function sttInputBind( targetElement ) {
+function sttInputBind( targetElement )
+{
 	
 	if ( currentStatus.state === gamePlayStatusTypes.inprogress ) {
 		if ( sttUIMarkcell( $(targetElement) , currentStatus.currentPlayer ) ) {
@@ -53,4 +62,26 @@ function sttInputBind( targetElement ) {
 		}
 	}
 	
+}
+
+function sttInputOnHover( targetElement )
+{
+	var targetParent = $(targetElement);
+	if ( currentStatus.state === gamePlayStatusTypes.inprogress && ( targetParent.hasClass("input-claimed") === false ) ) {
+		var target = "#"+targetParent.attr("id")+" .stt-icon-current-state";
+		$(target).html('<i class="glyphicon '+playerProps[currentStatus.currentPlayer].faIconClass+'"></i>');
+	}
+	
+	return true;
+}
+
+function sttInputOnHoverOut( targetElement )
+{
+	var targetParent = $(targetElement);
+	if ( currentStatus.state === gamePlayStatusTypes.inprogress && ( targetParent.hasClass("input-claimed") === false ) ) {
+		var target = "#"+targetParent.attr("id")+" .stt-icon-current-state";
+		$(target).html("");
+	}
+	
+	return true;
 }
