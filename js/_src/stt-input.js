@@ -6,10 +6,9 @@
 
 */
 
-// Variables
-
-
-// Global functions
+/**
+ * Initializes the Input system.
+ */
 function sttInitInput()
 {
 	$(".stt-cell").click( function() {
@@ -27,11 +26,17 @@ function sttInitInput()
 	});
 }
 
+/**
+ * Resets the Input system.
+ */
 function sttResetInput()
 {
 	
 }
 
+/**
+ * Advances the current player's turn.
+ */
 function sttInputAdvancePlayer()
 {
 	
@@ -46,17 +51,27 @@ function sttInputAdvancePlayer()
 	
 }
 
+/**
+ * Functions to run when a turn is made by a player.
+ */
 function sttInputEndTurn()
 {
 	sttSetWinStatus();
 	sttUICurrentPlayer();
 }
 
+/**
+ * Binding input function on a cell.
+ * 
+ * @param targetElement object
+ * 		jQuery object of target cell to mark.
+ */
 function sttInputBind( targetElement )
 {
 	
 	if ( currentStatus.state === gamePlayStatusTypes.inprogress ) {
 		if ( sttUIMarkcell( $(targetElement) , currentStatus.currentPlayer ) ) {
+			// Returns TRUE only if cell is previously unclaimed.
 			sttInputAdvancePlayer();
 			sttInputEndTurn();
 		}
@@ -64,6 +79,14 @@ function sttInputBind( targetElement )
 	
 }
 
+/**
+ * Binding OnHover function on a cell.
+ * 
+ * @param targetElement object
+ * 		jQuery object of target cell to mark.
+ * @return bool
+ * 		TRUE on successful call.
+ */
 function sttInputOnHover( targetElement )
 {
 	var targetParent = $(targetElement);
@@ -75,6 +98,14 @@ function sttInputOnHover( targetElement )
 	return true;
 }
 
+/**
+ * Binding OnHoverOut function on a cell.
+ * 
+ * @param targetElement object
+ * 		jQuery object of target cell to mark.
+ * @return bool
+ * 		TRUE on successful call.
+ */
 function sttInputOnHoverOut( targetElement )
 {
 	var targetParent = $(targetElement);
