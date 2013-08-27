@@ -35,6 +35,10 @@
   user-select: none;
   cursor: pointer;
 }
+#stt-main-playfield ul li .glyphicon {
+  color: #fff;
+  top: -8px;
+}
 #stt-main-playfield ul li:last-child {
   padding-right: 0;
 }
