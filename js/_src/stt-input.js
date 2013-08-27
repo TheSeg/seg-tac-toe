@@ -15,6 +15,9 @@ function sttInitInput()
 	$(".stt-cell").click( function() {
 		sttInputBind( this );
 	});
+	$("#stt-reset-button").click( function() {
+		sttReset();
+	});
 }
 
 function sttResetInput()
