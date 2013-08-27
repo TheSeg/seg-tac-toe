@@ -41,6 +41,7 @@ function sttInputAdvancePlayer()
 
 function sttInputEndTurn() {
 	sttSetWinStatus();
+	sttUICurrentPlayer();
 }
 
 function sttInputBind( targetElement ) {
