@@ -110,12 +110,16 @@ body {
   
 }
 
+#main-container {
+	.center-block();
+}
+
 #stt-main-playfield {
-  text-align:center;
+
   ul {
+	.center-block();
     width:( @stt-cell-size * 3 ) + 0px;
-    margin:0 0 0 0;
-    padding:0 0 0 0;
+    margin-bottom:0;
     background-color:#ff0;
     &:last-child {
       padding-bottom:0;
