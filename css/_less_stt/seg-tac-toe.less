@@ -17,7 +17,95 @@
 @stt-player-color-o:lighten(#00f,10%);
 
 // Mixins
+#stt {
+	.radial (@inner-color: #555) {
+		@radial-color-1:fade( @inner-color , 100 );
+		@radial-color-2:fade( @inner-color , 75 );
+		@radial-color-3:fade( @inner-color , 50 );
+		@radial-color-4:fade( @inner-color , 45 );
+		@radial-color-5:fade( @inner-color , 0 );
+		
+		@radial-pos-1:0%;
+		@radial-pos-2:25%;
+		@radial-pos-3:30%;
+		@radial-pos-4:45%;
+		@radial-pos-5:70%;
+		
+	    background-image: -webkit-gradient(
+			radial, center center, 0px, center center, 100%,
+			color-stop( @radial-pos-1 , @radial-color-1 ),
+			color-stop( @radial-pos-2 , @radial-color-2 ), 
+			color-stop( @radial-pos-3 , @radial-color-3 ), 
+			color-stop( @radial-pos-4 , @radial-color-4 ),
+			color-stop( @radial-pos-5 , @radial-color-5 )
+		);
+	    background-image: -moz-radial-gradient(
+			center, ellipse cover,
+			@radial-color-1 @radial-pos-1,
+			@radial-color-2 @radial-pos-2,
+			@radial-color-3 @radial-pos-3,
+			@radial-color-4 @radial-pos-4,
+			@radial-color-5 @radial-pos-5
+		);
+	    background-image: -moz-radial-gradient(circle, @inner-color, @inner-color);
+	    background-image: radial-gradient(
+			ellipse at center,
+			@radial-color-1 @radial-pos-1,
+			@radial-color-2 @radial-pos-2,
+			@radial-color-3 @radial-pos-3,
+			@radial-color-4 @radial-pos-4,
+			@radial-color-5 @radial-pos-5
+		);
+	    background-repeat: no-repeat;
+		
+		/*
+		background: -moz-radial-gradient(
+			center, ellipse cover,
+			rgba(177,216,245,1) 0%,
+			rgba(190,228,248,0.75) 25%,
+			rgba(200,238,251,0.54) 46%,
+			rgba(230,248,253,0.3) 70%,
+			rgba(225,255,255,0.12) 88%,
+			rgba(225,255,255,0.07) 93%,
+			rgba(225,255,255,0) 100%
+		);
 
+		background: -webkit-gradient(
+			radial, center center, 0px, center center, 100%,
+			color-stop(0%,rgba(177,216,245,1)),
+			color-stop(25%,rgba(190,228,248,0.75)), 
+			color-stop(46%,rgba(200,238,251,0.54)), 
+			color-stop(70%,rgba(230,248,253,0.3)),
+			color-stop(88%,rgba(225,255,255,0.12)), 
+			color-stop(93%,rgba(225,255,255,0.07)), 
+			color-stop(100%,rgba(225,255,255,0))
+		);
+
+		background: -webkit-radial-gradient(center, ellipse cover,  rgba(177,216,245,1) 0%,rgba(190,228,248,0.75) 25%,rgba(200,238,251,0.54) 46%,rgba(230,248,253,0.3) 70%,rgba(225,255,255,0.12) 88%,rgba(225,255,255,0.07) 93%,rgba(225,255,255,0) 100%);
+
+		background: -o-radial-gradient(center, ellipse cover,  rgba(177,216,245,1) 0%,rgba(190,228,248,0.75) 25%,rgba(200,238,251,0.54) 46%,rgba(230,248,253,0.3) 70%,rgba(225,255,255,0.12) 88%,rgba(225,255,255,0.07) 93%,rgba(225,255,255,0) 100%);
+
+		background: -ms-radial-gradient(center, ellipse cover,  rgba(177,216,245,1) 0%,rgba(190,228,248,0.75) 25%,rgba(200,238,251,0.54) 46%,rgba(230,248,253,0.3) 70%,rgba(225,255,255,0.12) 88%,rgba(225,255,255,0.07) 93%,rgba(225,255,255,0) 100%);
+
+		background: radial-gradient(
+			ellipse at center,
+			rgba(177,216,245,1) 0%,
+			rgba(190,228,248,0.75) 25%,
+			rgba(200,238,251,0.54) 46%,
+			rgba(230,248,253,0.3) 70%,
+			rgba(225,255,255,0.12) 88%,
+			rgba(225,255,255,0.07) 93%,
+			rgba(225,255,255,0) 100%
+		);
+
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f5', endColorstr='#00e1ffff',GradientType=1 );
+		*/
+		
+	}
+}
+
+
+//
 body {
   
 }
@@ -36,15 +124,16 @@ body {
 	// Common Function for claimed cells.
 	.stt-cell-claimed(@targetColor) {
 	  cursor:not-allowed;
+	  #stt.radial( @targetColor );
 	  .icon-stack-base {
-		  color:#999;
+		  color:darken(@targetColor, 30%);
 	  }
 	  .stt-icon-current-state {
-		  color:@targetColor;
-		  text-shadow:0 0 2px #000;
+		  color:#fff;//@targetColor;
+		  text-shadow:0 0 20px #333;
 	  }
 	  &:hover {
-		  //background-color:lighten(@targetColor,30%);
+		  #stt.radial( @targetColor );
 	  }
 	}
 	
@@ -54,13 +143,13 @@ body {
       background-color:#fff;
       font-size:50pt;
       text-align:center;
-      //border:4px solid black;
       width:@stt-cell-size;
       height:@stt-cell-size;
       margin:0 10px 0 10px;
       padding:0 0 0 0;
 	  .user-select(none);
 	  cursor:pointer;
+	  #stt.radial( rgb(30,30,30) );
 	  .icon-stack-base {
 		  color:#ccc;
 		  text-shadow:0 0 4px #000;
@@ -72,7 +161,7 @@ body {
         padding-right:0;
       }
       &:hover {
-        background-color:#ddd;
+		#stt.radial( #00f );
       }
 	  &.input-claimed-x {
 		  .stt-cell-claimed(@stt-player-color-x);
