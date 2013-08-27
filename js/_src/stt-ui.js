@@ -48,3 +48,14 @@ function sttUIUnMarkCellAll()
 		sttUIUnMarkCell( $(this) );
 	});
 }
+
+function sttUIEOF() {
+	// End of Game Display
+	
+	// Closing Pre-animations
+	
+	// Dress the Model.
+	
+	// Show Model
+	$('#model-eog').modal('show');
+}
