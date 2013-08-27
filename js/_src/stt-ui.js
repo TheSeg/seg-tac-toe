@@ -24,6 +24,7 @@ function sttResetUI()
 {
 	console.log("sttResetUI();");
 	sttUIUnMarkCellAll();
+	sttUICurrentPlayer();
 }
 
 function sttUIMarkcell( targetCell , targetPlayer )
@@ -86,4 +87,21 @@ function sttUIEOF() {
 	
 	// Show Model
 	$('#model-eog').modal('show');
+}
+
+function sttUICurrentPlayer() {
+	// Sets up playfield style for active player.
+	
+	// Clean up current settings.
+	$("#stt-main-playfield").removeClass("stt-current-player-X stt-current-player-O");
+	
+	// Don't do anything if we're not in progress of a game.
+	if ( currentStatus.state !== gamePlayStatusTypes.inprogress ) {
+		return false;
+	}
+	
+	// Set the proper classes.
+	$("#stt-main-playfield").addClass( "stt-current-player-" + currentStatus.currentPlayer.toUpperCase() );
+	
+	return true;
 }
